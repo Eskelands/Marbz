@@ -6,36 +6,52 @@
   <title>Min side</title>
 
   <style>
-img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      overflow: hidden;
+      position: relative;
+      font-family: Arial;
+    }
 
-  opacity: 0;
-  animation: fadeInImage 2s ease forwards;
-}
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
 
-.overlay {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: black;
+    .overlay {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: black;
+    }
 
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInText 2s ease forwards;
-  animation-delay: 1s;
-}
+    h1 {
+      margin: 0;
+    }
 
-@keyframes fadeInImage {
-  to { opacity: 1; }
-}
+    p, i {
+      margin-top: 10px;
+      display: block;
+    }
+  </style>
+</head>
 
-@keyframes fadeInText {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-</style>
+<body>
+
+  <img src="Trophywife.jpg" alt="background">
+
+  <div class="overlay">
+    <h1>IN MY TROPHY WIFE ERA</h1>
+    <i>I'm the wife that will help you get the trophy!</i>
+  </div>
+
+</body>
+</html>
