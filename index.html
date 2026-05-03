@@ -25,23 +25,38 @@
       animation: fadeInImage 2s ease forwards;
     }
 
-    /* TEKST OVER BILDE (HELT ØVERST) */
+    /* GRADIENT OVER BILDE */
+    .gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 40%; /* kun øvre del */
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0)
+      );
+      z-index: 1;
+    }
+
+    /* TEKST OVER GRADIENT */
     .overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
 
-      z-index: 1;
+      z-index: 2;
       text-align: center;
-      color: black;
+      color: white;
 
       opacity: 0;
       transform: translateY(-20px);
       animation: fadeInText 2s ease forwards;
       animation-delay: 1s;
 
-      padding-top: 20px; /* litt luft fra toppen */
+      padding-top: 20px;
     }
 
     h1 {
@@ -53,6 +68,7 @@
       display: block;
       margin-top: 10px;
       font-size: 1.2rem;
+      opacity: 0.9;
     }
 
     /* ANIMASJONER */
@@ -75,9 +91,12 @@
 
   <img src="Trophywife.jpg" alt="bakgrunnsbilde">
 
+  <!-- mørk gradient -->
+  <div class="gradient"></div>
+
   <div class="overlay">
-    <h1>I'm the wife that will help you get the trophy!</h1>
-    <i>IN OUR TROPHY WIFE ERA</i>
+    <h1>IN MY TROPHY WIFE ERA</h1>
+    <i>I'm the wife that will help you get the trophy!</i>
   </div>
 
 </body>
