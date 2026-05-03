@@ -12,9 +12,6 @@
       overflow: hidden;
       font-family: Arial, sans-serif;
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     /* BAKGRUNNSBILDE */
@@ -28,17 +25,23 @@
       animation: fadeInImage 2s ease forwards;
     }
 
-    /* TEKST OVER BILDE */
+    /* TEKST OVER BILDE (HELT ØVERST) */
     .overlay {
-      top: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+
       z-index: 1;
       text-align: center;
       color: black;
 
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(-20px);
       animation: fadeInText 2s ease forwards;
       animation-delay: 1s;
+
+      padding-top: 20px; /* litt luft fra toppen */
     }
 
     h1 {
