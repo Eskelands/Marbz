@@ -64,18 +64,49 @@
 
     h1 {
       margin: 0;
-      font-size: 5rem; /* 🔥 dobbelt så stor */
+      font-size: 5rem;
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
 
+    /* 🔥 LINJE 2 (glow + highlight) */
     i {
       display: block;
       margin-top: 15px;
-      font-size: 2rem; /* 🔥 også større */
+      font-size: 2rem;
       font-weight: 300;
-      opacity: 0.9;
+      opacity: 0.95;
+
+      position: relative;
+
+      /* ✨ glow */
+      text-shadow:
+        0 0 10px rgba(255,255,255,0.5),
+        0 0 20px rgba(255,255,255,0.3);
+
+      /* liten animasjon */
+      transform: scale(0.95);
+      animation: popIn 1s ease forwards;
+      animation-delay: 1.4s;
+    }
+
+    /* 🌫 highlight bak teksten */
+    i::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 110%;
+      height: 140%;
+      background: radial-gradient(
+        ellipse,
+        rgba(255,255,255,0.2),
+        rgba(255,255,255,0)
+      );
+      z-index: -1;
+      border-radius: 12px;
     }
 
     /* ANIMASJONER */
@@ -91,6 +122,24 @@
         transform: translateY(0);
       }
     }
+
+    @keyframes popIn {
+      to {
+        transform: scale(1);
+      }
+    }
+
+    /* 📱 Mobiltilpasning */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      i {
+        font-size: 1.4rem;
+      }
+    }
+
   </style>
 </head>
 
