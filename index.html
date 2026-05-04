@@ -28,7 +28,7 @@
       animation: fadeInImage 2s ease forwards;
     }
 
-    /* GRADIENT OVER BILDE */
+    /* GRADIENT */
     .gradient {
       position: absolute;
       top: 0;
@@ -70,7 +70,7 @@
       text-transform: uppercase;
     }
 
-    /* 🔥 LINJE 2 (glow + highlight) */
+    /* 🔥 LINJE 2 */
     i {
       display: block;
       margin-top: 15px;
@@ -80,40 +80,38 @@
 
       position: relative;
 
-      /* ✨ glow */
-      text-shadow:
-        0 0 10px rgba(255,255,255,0.5),
-        0 0 20px rgba(255,255,255,0.3);
+      /* ✨ pulserende glow */
+      animation: glowPulse 3s ease-in-out infinite;
 
-      /* liten animasjon */
+      /* intro animasjon */
       transform: scale(0.95);
-      animation: popIn 1s ease forwards;
-      animation-delay: 1.4s;
+      animation: popIn 1s ease forwards, glowPulse 3s ease-in-out infinite;
+      animation-delay: 1.4s, 2s;
     }
 
-    /* 🌫 highlight bak teksten */
+    /* 🌫 levende highlight bak */
     i::before {
       content: "";
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      width: 110%;
-      height: 140%;
+      width: 115%;
+      height: 150%;
       background: radial-gradient(
         ellipse,
-        rgba(255,255,255,0.2),
+        rgba(255,255,255,0.25),
         rgba(255,255,255,0)
       );
       z-index: -1;
       border-radius: 12px;
+
+      animation: glowBg 4s ease-in-out infinite;
     }
 
     /* ANIMASJONER */
     @keyframes fadeInImage {
-      to {
-        opacity: 1;
-      }
+      to { opacity: 1; }
     }
 
     @keyframes fadeInText {
@@ -124,12 +122,36 @@
     }
 
     @keyframes popIn {
-      to {
-        transform: scale(1);
+      to { transform: scale(1); }
+    }
+
+    /* ✨ glow puls */
+    @keyframes glowPulse {
+      0%, 100% {
+        text-shadow:
+          0 0 10px rgba(255,255,255,0.4),
+          0 0 20px rgba(255,255,255,0.2);
+      }
+      50% {
+        text-shadow:
+          0 0 18px rgba(255,255,255,0.7),
+          0 0 35px rgba(255,255,255,0.4);
       }
     }
 
-    /* 📱 Mobiltilpasning */
+    /* 🌫 bakgrunns glow animasjon */
+    @keyframes glowBg {
+      0%, 100% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+
+    /* 📱 Mobil */
     @media (max-width: 600px) {
       h1 {
         font-size: 2.8rem;
