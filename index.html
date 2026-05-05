@@ -6,7 +6,6 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Min side</title>
 
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -23,7 +22,6 @@
       background: black;
     }
 
-    /* WRAPPER */
     .container {
       position: relative;
       width: 100%;
@@ -31,14 +29,13 @@
       overflow: hidden;
     }
 
-    /* BAKGRUNNSBILDE */
+    /* BAKGRUNN */
     .bg-img {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-
       opacity: 0;
       animation: fadeInImage 2s ease forwards;
     }
@@ -69,13 +66,11 @@
 
       text-align: center;
       color: white;
-
       padding-top: 40px;
 
       opacity: 0;
       transform: translateY(-20px);
-      animation: fadeInText 1.8s ease forwards;
-      animation-delay: 1s;
+      animation: fadeInText 1.8s ease forwards 1s;
     }
 
     h1 {
@@ -85,10 +80,12 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       line-height: 1.1;
+
+      max-width: 12ch;      /* 🔥 holder teksten til ca 2 linjer */
+      margin-inline: auto;
       padding: 0 10px;
     }
 
-    /* LINJE 2 */
     .tagline {
       margin-top: 15px;
       font-size: clamp(1.2rem, 3.5vw, 2rem);
@@ -99,9 +96,9 @@
       transform: scale(0.95);
       animation: popIn 0.8s ease forwards 1.4s,
                  glowPulse 3s ease-in-out infinite 2s;
+      padding: 0 15px;
     }
 
-    /* Glow bak */
     .tagline::before {
       content: "";
       position: absolute;
@@ -161,14 +158,9 @@
       }
     }
 
-    /* EKSTRA FINPUSS FOR MOBIL */
     @media (max-width: 600px) {
       .overlay {
         padding-top: 30px;
-      }
-
-      .tagline {
-        padding: 0 15px;
       }
     }
 
