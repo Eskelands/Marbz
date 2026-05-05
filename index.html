@@ -29,18 +29,17 @@
       overflow: hidden;
     }
 
-    /* BAKGRUNN */
     .bg-img {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
+
       opacity: 0;
       animation: fadeInImage 2s ease forwards;
     }
 
-    /* GRADIENT */
     .gradient {
       position: absolute;
       inset: 0;
@@ -53,7 +52,6 @@
       z-index: 1;
     }
 
-    /* TEKST */
     .overlay {
       position: absolute;
       inset: 0;
@@ -66,6 +64,7 @@
 
       text-align: center;
       color: white;
+
       padding-top: 40px;
 
       opacity: 0;
@@ -73,17 +72,16 @@
       animation: fadeInText 1.8s ease forwards 1s;
     }
 
+    /* 🔥 HOVEDFIX: alltid 1 linje + stor og responsiv */
     h1 {
       margin: 0;
-      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-size: clamp(1.4rem, 7vw, 5rem);
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
       line-height: 1.1;
 
-      max-width: 12ch;      /* 🔥 holder teksten til ca 2 linjer */
-      margin-inline: auto;
-      padding: 0 10px;
+      white-space: nowrap;
     }
 
     .tagline {
@@ -96,6 +94,7 @@
       transform: scale(0.95);
       animation: popIn 0.8s ease forwards 1.4s,
                  glowPulse 3s ease-in-out infinite 2s;
+
       padding: 0 15px;
     }
 
@@ -118,7 +117,6 @@
       animation: glowBg 4s ease-in-out infinite;
     }
 
-    /* ANIMASJONER */
     @keyframes fadeInImage {
       to { opacity: 1; }
     }
